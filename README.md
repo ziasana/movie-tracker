@@ -1,11 +1,6 @@
-# movie-tracker
-A movie tracking demo
-
 # 🎬 Movie Tracker
 
 A full-stack web application for browsing, searching, and tracking movies. Built with React, Node.js, GraphQL, and MongoDB.
-
-![Movie Tracker Screenshot](./screenshot.png) <!-- Add a screenshot later -->
 
 ## ✨ Features
 
@@ -32,7 +27,6 @@ A full-stack web application for browsing, searching, and tracking movies. Built
 ### Development Tools
 - ESLint + Prettier
 - GitHub Actions (CI/CD)
-- Docker (optional)
 
 ## 🚀 Getting Started
 
@@ -69,8 +63,8 @@ In another terminal:
 
 bash
 cd client && npm start
+
 📂 Project Structure
-text
 movie-tracker/
 ├── client/               # Frontend React app
 │   ├── public/
@@ -88,6 +82,7 @@ movie-tracker/
 │   └── package.json
 │
 └── README.md
+
 🌐 API Reference
 GraphQL Endpoints
 GET /graphql - Main GraphQL endpoint
@@ -104,7 +99,9 @@ query GetMovies {
     release_date
   }
 }
+
 🤝 Contributing
+The Authentication part is still under development.
 Fork the project
 
 Create your feature branch (git checkout -b feature/AmazingFeature)
@@ -119,27 +116,6 @@ Open a Pull Request
 Distributed under the MIT License. See LICENSE for more information.
 
 📬 Contact
-Your Name - @yourtwitter - youremail@example.com
+Mohammad Zia Saa - @zs.hossainy@gmail.com
 
 Project Link: https://github.com/your-username/movie-tracker
-
-text
-
-### How to Use This README:
-1. Replace placeholder values (`your-username`, contact info, etc.)
-2. Add a project screenshot (rename `screenshot.png`)
-3. Customize the GraphQL examples with your actual schema
-4. Update the tech stack if you used different technologies
-5. Add deployment instructions if applicable
-
-### Recommended Enhancements:
-- Add badges (build status, license, etc.)
-- Include gifs/videos of the app in action
-- Add setup instructions for Docker if containerized
-- Include testing instructions
-
-Would you like me to add any specific sections like:
-- API documentation details?
-- Screenshot examples?
-- Deployment instructions for Vercel/Heroku?
-New chat
