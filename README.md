@@ -65,23 +65,8 @@ bash
 cd client && npm start
 
 📂 Project Structure
-movie-tracker/
-├── client/               # Frontend React app
-│   ├── public/
-│   ├── src/
-│   │   ├── components/   # Reusable components
-│   │   ├── pages/        # Page components
-│   │   ├── graphql/      # GraphQL queries
-│   │   └── App.js        # Main app component
-│   └── package.json
-│
-├── server/               # Backend Node.js app
-│   ├── models/           # MongoDB models
-│   ├── resolvers/        # GraphQL resolvers
-│   ├── schema/           # GraphQL schema
-│   └── package.json
-│
-└── README.md
+
+![structure](https://github.com/user-attachments/assets/d0f8e1a6-0dbe-4d5d-ad61-aa3be6d8e73c)
 
 🌐 API Reference
 GraphQL Endpoints
