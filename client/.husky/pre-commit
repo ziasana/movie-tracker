@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run lint-staged to check staged files
+npx lint-staged
+
+# Optional: Run tests on staged files (uncomment if needed)
+# npm test -- --findRelatedTests $(git diff --name-only --cached --relative)
+
+echo "✅ Pre-commit checks passed!"
