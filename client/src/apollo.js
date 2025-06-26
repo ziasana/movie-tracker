@@ -1,3 +1,5 @@
+// This file sets up Apollo Client for GraphQL queries and mutations
+// It includes an authentication token in the headers for secure requests
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 

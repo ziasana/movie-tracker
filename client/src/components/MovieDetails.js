@@ -1,6 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { formatMovieDate } from "../utils/dateUtils";
+import React from "react";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 const GET_MOVIE_DETAILS = gql`
   query GetMovieDetails($id: ID!) {
@@ -21,7 +23,7 @@ export default function MovieDetails() {
     variables: { id },
   });
 
-  if (loading) return <div className="text-center py-8">Loading...</div>;
+  if (loading) return <LoadingIndicator />;
   if (error)
     return <div className="text-red-500 p-4">Error: {error.message}</div>;
 
