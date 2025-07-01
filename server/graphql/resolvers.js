@@ -19,9 +19,9 @@ export const resolvers = {
       await Movie.find({
         title: { $regex: query, $options: "i" }, // Case-insensitive search
       }),
-    getMovieDetails: async (_, { id }) => await Movie.findById(id),
 
-    getMovies: async (_, { page = 1, limit = 10 }) => {
+    // Pagination for movies
+    getMoviesWithPagination: async (_, { page = 1, limit = 10 }) => {
       const skip = (page - 1) * limit;
 
       const [movies, totalCount] = await Promise.all([

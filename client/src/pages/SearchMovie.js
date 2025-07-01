@@ -1,19 +1,10 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import MovieCard from "../components/MovieCard";
+import LoadingIndicator from "../components/LoadingIndicator";
+import { SEARCH_MOVIES } from "../graphql/queries";
 
-const SEARCH_MOVIES = gql`
-  query SearchMovies($query: String!) {
-    searchMovies(query: $query) {
-      id
-      title
-      poster_path
-      release_date
-    }
-  }
-`;
-
-export default function Home() {
+export default function SearchMovie() {
   const [query, setQuery] = useState("");
   const { data, loading, error } = useQuery(SEARCH_MOVIES, {
     variables: { query },
@@ -29,7 +20,7 @@ export default function Home() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      {loading && <p className="text-center">Loading...</p>}
+      {loading && <LoadingIndicator />}
       {error && <p className="text-red-500">Error: {error.message}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data?.searchMovies?.map((movie) => (

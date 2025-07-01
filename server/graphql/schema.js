@@ -36,9 +36,12 @@ export const typeDefs = gql`
     movies: [Movie]
     movie(id: ID!): Movie
     searchMovies(query: String!): [Movie!]!
-    getMovieDetails(id: ID!): Movie
     myWatchlist: [Movie!]!
-    getMovies(page: Int = 1, limit: Int = 10, search: String): MoviePage!
+    getMoviesWithPagination(
+      page: Int = 1
+      limit: Int = 10
+      search: String
+    ): MoviePage!
   }
 
   type Mutation {
