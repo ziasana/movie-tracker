@@ -36,7 +36,6 @@ export const typeDefs = gql`
     movies: [Movie]
     movie(id: ID!): Movie
     searchMovies(query: String!): [Movie!]!
-    getMovieDetails(id: ID!): Movie
     myWatchlist: [Movie!]!
     getMoviesWithPagination(
       page: Int = 1
