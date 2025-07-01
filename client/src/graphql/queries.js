@@ -17,9 +17,9 @@ import { gql } from "@apollo/client";
  *       - hasNextPage {boolean}
  *       - hasPreviousPage {boolean}
  */
-export const GET_MOVIES = gql`
-  query GetMovies($page: Int, $limit: Int) {
-    getMovies(page: $page, limit: $limit) {
+export const GET_PAGINATED_MOVIES = gql`
+  query getMovies($page: Int, $limit: Int) {
+    getMoviesWithPagination(page: $page, limit: $limit) {
       movies {
         id
         title
@@ -53,6 +53,34 @@ export const SEARCH_MOVIES = gql`
       title
       poster_path
       release_date
+    }
+  }
+`;
+
+/**
+ * GraphQL query to fetch detailed information about a movie by its ID.
+ *
+ * @constant
+ * @type {import('@apollo/client').DocumentNode}
+ * @param {Object} variables - The variables for the query.
+ * @param {string} variables.id - The unique identifier of the movie.
+ * @returns {Object} data - The movie details.
+ * @returns {string} data.movie.title - The title of the movie.
+ * @returns {string} data.movie.overview - The overview or summary of the movie.
+ * @returns {string} data.movie.poster_path - The path to the movie's poster image.
+ * @returns {string} data.movie.release_date - The release date of the movie.
+ * @returns {Array<string>} data.movie.genres - The genres associated with the movie.
+ * @returns {number} data.movie.vote_average - The average vote rating of the movie.
+ */
+export const GET_MOVIE_DETAILS = gql`
+  query GetMovieDetails($id: ID!) {
+    movie(id: $id) {
+      title
+      overview
+      poster_path
+      release_date
+      genres
+      vote_average
     }
   }
 `;

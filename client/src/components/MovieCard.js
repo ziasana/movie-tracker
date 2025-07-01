@@ -1,18 +1,7 @@
-import { useMutation, gql } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { formatMovieDate } from "../utils/dateUtils";
 import { Link } from "react-router-dom";
-
-const ADD_TO_WATCHLIST = gql`
-  mutation AddToWatchlist($movieId: ID!) {
-    addToWatchlist(movieId: $movieId) {
-      id
-      watchlist {
-        id
-        title
-      }
-    }
-  }
-`;
+import { ADD_TO_WATCHLIST } from "../graphql/mutations";
 
 export default function MovieCard({ movie }) {
   const [addToWatchlist] = useMutation(ADD_TO_WATCHLIST);

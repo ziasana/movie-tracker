@@ -1,21 +1,8 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { formatMovieDate } from "../utils/dateUtils";
-import React from "react";
 import LoadingIndicator from "../components/LoadingIndicator";
-
-const GET_MOVIE_DETAILS = gql`
-  query GetMovieDetails($id: ID!) {
-    movie(id: $id) {
-      title
-      overview
-      poster_path
-      release_date
-      genres
-      vote_average
-    }
-  }
-`;
+import { GET_MOVIE_DETAILS } from "../graphql/queries";
 
 export default function MovieDetails() {
   const { id } = useParams();
